@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    font: 15px;
+    font-family: Lexend Deca, monospace;
+    font-weight: 400; 
+    accent-color: hsl(277, 64%, 61%);
+    /* overflow: auto; */
+}
+
+.container {
+    height: 100%;
+    background-color: hsl(233, 47%, 7%);
+    color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    /* place-items: center; */
+    justify-content: center;
+    align-items: center;
+}
+/* ---last minute coloring--- */
+.container > .wrapper > .box-info > .head {
+    color: hsl(0, 0%, 100%);
+}
+.container > .wrapper > .box-info > .info {
+    color: hsla(0, 0%, 100%, 0.75);
+}
+.container > .wrapper > .box-info > .stats {
+    color: hsla(0, 0%, 100%, 0.6);
+}
+/* --- Giving myself the credits--- */
+.container > .attribution{
+    font-size: 10px;
+    /* border: 2px dashed deeppink; */
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* -----------for mobile------------- */
+@media only screen and (min-width: 250px) and (max-width: 768px) {
+    .wrapper{
+        border-radius: 10px;
+        background-color: hsl(244, 38%, 16%);
+        height: 80%;
+        width: 90%;
+        display: grid;
+        grid-template-rows: 1fr 2fr;
+        grid-template-areas: 
+                "i"
+                "d";
+    }
+    .wrapper > .box-img {
+        grid-area: i;
+        background: url('images/image-header-mobile.jpg') no-repeat;
+        background-size: cover;
+        border-radius: 10px 10px 0 0;
+    }
+    .wrapper > .box-img > .overlay {
+        background: hsl(277deg, 100%, 50%, 0.42);
+        height: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+    .wrapper > .box-img > .overlay-2 {
+        background: hsl(293deg, 42%, 35%, 0.24);
+        height: 100%;
+        mix-blend-mode: color-burn;
+        border-radius: 10px 10px 0 0;
+    }
+    .wrapper > .box-info {
+        grid-area: d;
+        display: grid;
+        grid-template-rows: 10px auto 10px auto 10px auto 10px;
+        grid-template-areas: 
+                "."
+                "one"
+                "."
+                "two"
+                "."
+                "three"
+                ".";
+    }
+    .wrapper > .box-info > .head {
+        grid-area: one;
+        font-size: 4vw;
+        /* border: 2px dashed blue; */
+        align-self: center;
+        padding: 0 1vw;
+        text-align: center;
+        /* border: 2px dashed tomato; */
+    }
+    .wrapper > .box-info > .info {
+        grid-area: two;
+        font-size: 3.3vw;
+        padding: 0 2vw;
+        text-align: center;
+        /* border: 2px dashed tomato; */
+    }
+    .wrapper > .box-info > .stats {
+        grid-area: three;
+        font-size: 3.3vw;
+        /* border: 2px dashed tomato;     */
+        /* height: max-content; */
+        display: grid;
+        margin-bottom: 2vh;
+        /* place-items: center; */
+        /* overflow-y: auto; */
+    }
+    .wrapper > .box-info > .stats > .one {
+        /* border: 1px solid white; */
+        width: min-content;
+        height: 35%;
+        place-self: center;
+        text-align: center;
+        /* margin: 0 auto; */
+    }
+    .wrapper > .box-info > .stats > .two {
+        /* border: 1px solid white; */
+        width: min-content;
+        height: 35%;
+        place-self: center;
+        text-align: center;
+        /* margin: 0 auto; */
+    }
+    .wrapper > .box-info > .stats > .three {
+        /* border: 1px solid white; */
+        width: min-content;
+        height: 35%;
+        place-self: center;
+        text-align: center;
+        /* margin: 0 auto; */
+    }
+}
+
+/* ------------for desktop----------- */
+@media only screen and (min-width: 768px) {
+    .wrapper {
+        border-radius: 10px;
+        /* overflow: auto; */
+        background-color: hsl(244, 38%, 16%);
+        height: 56vh;
+        width: 77vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:    
+                "details img_ ";
+    }
+    .wrapper > .box-info {
+        /* border: 4px salmon solid; */
+        grid-area: details;
+        padding-left: 4vw;
+        padding-right: 4vw;
+        display: grid;
+        grid-template-rows: 10px auto 5px auto 20px auto 10px;
+        grid-template-areas: 
+                "."
+                "H"
+                "."
+                "I"
+                "."
+                "S"
+                ".";
+    }
+    .wrapper > .box-info > .head {
+        grid-area: H;
+        /* border: 3px dotted darksalmon; */
+        align-self: center;
+        font-size: 30px;
+        /* padding-top: 1vh; */
+    }
+    .wrapper > .box-info > .info {
+        grid-area: I;
+        /* border: 3px dotted darksalmon; */
+        place-self: center;
+    }
+    .wrapper > .box-info > .stats {
+        grid-area: S;
+        /* border: 3px dotted darksalmon; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 2%;
+        /* justify-content: space-around; */
+        /* justify-content: space-evenly; */
+    }
+    .wrapper > .box-info > .stats > .one {
+        /* border: 3px solid black; */
+        height: 100%;
+        padding-top: 2vh;
+        align-self: center;
+        width: min-content;
+    }
+    .wrapper > .box-info > .stats > .two {
+        /* border: 3px solid black; */
+        height: 100%;
+        width: min-content;
+        padding-top: 2vh;
+    }
+    .wrapper > .box-info > .stats > .three {
+        /* border: 3px solid black; */
+        height: 100%;
+        width: min-content;
+        padding-top: 2vh;
+    }
+    .wrapper > .box-img {
+        grid-area: img_;
+        background: url('images/image-header-desktop.jpg') no-repeat;
+        background-size: cover;
+        border-radius: 0 10px 10px 0;
+    }
+    .wrapper > .box-img > .overlay {
+        background: hsl(277deg, 100%, 50%, 0.42);
+        height: 100%;
+        border-radius: 0 10px 10px 0;
+    }
+    .wrapper > .box-img > .overlay-2 {
+        background: hsl(293deg, 42%, 35%, 0.24);
+        height: 100%;
+        mix-blend-mode: color-burn;
+        border-radius: 0 10px 10px 0;
+    }
+}
